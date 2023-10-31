@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SF Mono", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+}
+body {
+    min-height: 100vh;
+    background: #000000e5;
+    margin: 0;
+    color: white;
+}
+header {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    height: 5vh;
+    left: 0;
+    top: 0;
+    padding: 1.3rem 10%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 61, 61, .5);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+.logo {
+    height: 5vh;
+}
+.logo img {
+    height: 5vh;
+    width: fit-content;
+    align-self: center;
+}
+.navbar a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-left: 2.6rem;
+}
+#menu-check {
+    display: none;
+}
+.icons {
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 3%;
+}
+
+/*scrollbar width */
+::-webkit-scrollbar {
+    width: .7rem;
+    
+}
+  
+/*scrollbar track */
+::-webkit-scrollbar-track {
+    background: rgba(61, 61, 61, .31);
+    backdrop-filter: blur(10px);
+}
+   
+/*scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, .5); 
+    border-radius: 5px;
+}
+  
+/*scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 100, 100, 1);
+}
+
+@media (max-width: 992px) {
+    header {
+        padding: 1.3rem 5%;
+    }
+}
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(61, 61, 61, .5);
+        backdrop-filter: blur(5px);
+        transition: .3s ease;
+        overflow: hidden;
+    }
+    .navbar a {
+        display: block;
+        font-size: 1.3rem;
+        margin: 2rem 0;
+        text-align: center;
+        transform: translateY(-30px);
+        transition: .3s ease;
+        opacity: 0;
+    }
+    .icons #close-button {
+        display: none;
+    }
+    #menu-check:checked~.icons #menu-button {
+        display: none;
+    }
+    #menu-check:checked~.icons #close-button {
+        display: block;
+    }
+    #menu-check:checked~.navbar {
+        height: 13rem;
+    }
+    #menu-check:checked~.navbar a {
+        transform: translateY(0px);
+        transition-delay: calc(.15s * var(--i));
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+main {
+    width: 80vw;
+    margin: auto;
+}
