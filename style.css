@@ -24,6 +24,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 10;
+    margin-bottom: 3vh;
 }
 
 header::before {
@@ -60,6 +61,7 @@ header::before {
     -ms-transition: color .3s linear;
     -o-transition: color .3s linear;
     transition: color .3s linear;
+    width: fit-content;
 }
 
 .navbar a:hover { 
@@ -126,10 +128,13 @@ header::before {
     .navbar a {
         display: block;
         font-size: 1.3rem;
-        margin: 2rem 0;
+        margin: auto;
+        margin-top: 2rem;
         text-align: center;
-        transform: translateY(-30px);
-        transition: .3s ease;
+        /* transform: translateY(-30px); */
+        /* transition: color .3s ; */
+        /* transition: opacity .3s ; */
+        transition: .3s;
         opacity: 0;
     }
   
@@ -137,7 +142,7 @@ header::before {
         display: flex;
         flex-direction: column;
         cursor: pointer;
-      }
+    }
       
     .bar1, .bar2, .bar3 {
         width: 30px;
